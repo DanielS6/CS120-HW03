@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PS1 - JS1</title>
+    <script>
+        // Need to wait for document to load
+        document.addEventListener( 'DOMContentLoaded', () => {
+            const firstName = prompt('What is your first name?');
+            const lastName = prompt('What is your last name?');
+            alert( 'Your name is ' + firstName + ' ' + lastName );
+
+            const numChildren = parseInt( prompt('How many children do you have?') );
+            const reportElem = document.getElementById( 'child-report' );
+            if ( isNaN(numChildren) || numChildren === 0 ) {
+                 // treating a non-number as 0
+                reportElem.innerText = 'You have no children';
+            } else if ( numChildren === 1 ) {
+                reportElem.innerText = 'You have 1 child';
+                alert( 'You have 1 child' );
+            } else {
+                reportElem.innerText = 'You have ' + numChildren + ' children';
+            }
+        } );
+    </script>
+</head>
+<body>
+
+<p id="child-report"></p>
+</body>
+</html>

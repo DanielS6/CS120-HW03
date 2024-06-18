@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PS1 - JS4</title>
+    <script>
+        const handleRange = ( low, high ) => {
+            let sum = 0;
+            for (let iii = low; iii <= high; iii++) {
+                sum += iii;
+                if ( iii % 2 === 1 ) {
+                    const li = document.createElement( 'li' );
+                    li.innerText = iii;
+                    document.getElementById('rangeOdds').append( li );
+                }
+            }
+            document.getElementById('rangeSum').innerText = sum;
+        }
+        // Need to wait for document to load
+        document.addEventListener( 'DOMContentLoaded', () => {
+            const str1 = prompt('Please enter a number');
+            const str2 = prompt('Please enter a second number');
+            const num1 = parseInt( str1 );
+            const num2 = parseInt( str2 );
+            if ( isNaN( num1 ) || isNaN( num2 ) ) {
+                console.error( 'Cannot compare invalid numbers:', str1, str2 );
+            } else if ( num1 < num2 ) {
+                handleRange( num1, num2 );
+            } else {
+                handleRange( num2, num1 );
+            }
+        } );
+    </script>
+</head>
+<body>
+
+<p>
+    NOTE: the range is treated as <em>inclusive</em>, i.e. both the start and
+    end numbers are included
+</p>
+
+
+<p>
+    Odd values in the range:
+</p>
+<ul id="rangeOdds"></ul>
+
+<p>
+    Sum of values in the range: <span id="rangeSum"></span>
+</p>
+</body>
+</html>

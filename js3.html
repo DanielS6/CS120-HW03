@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PS1 - JS3</title>
+    <script>
+        const str1 = prompt('Please enter a number');
+        const str2 = prompt('Please enter a second number');
+        const num1 = parseFloat( str1 );
+        const num2 = parseFloat( str2 );
+        if ( isNaN( num1 ) || isNaN( num2 ) ) {
+            console.error( 'Cannot compare invalid numbers:', str1, str2 );
+        } else if ( num1 < num2 ) {
+            console.log( num1, num2 );
+        } else {
+            console.log( num2, num1 );
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PS1 - JS5</title>
+    <script>
+        const addTimes = ( n ) => {
+            let text = '';
+            for (let iii = 1; iii <= 12; iii++) {
+                text += `${n} x ${iii} = ${n * iii}\n`;
+            }
+            const pre = document.createElement('pre');
+            pre.innerText = text;
+            document.querySelector('body').append(pre);
+        }
+        // Need to wait for document to load
+        document.addEventListener( 'DOMContentLoaded', () => {
+            addTimes(3);
+            document.querySelector('body').append( document.createElement('hr') );
+            addTimes(7);
+            document.querySelector('body').append( document.createElement('hr') );
+            addTimes(11);
+        } );
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PS1 - JS6</title>
+    <script>
+        const count = (nums, val) => nums.filter(n => n < val).length;
+        const testCount = () => {
+            document.getElementById('result').innerText = count(
+                [ 10, 20, 30, 40, 50 ],
+                30
+            );
+        };
+        // Need to wait for document to load
+        document.addEventListener( 'DOMContentLoaded', testCount );
+    </script>
+</head>
+<body>
+
+<div id="result"></div>
+
+</body>
+</html>
